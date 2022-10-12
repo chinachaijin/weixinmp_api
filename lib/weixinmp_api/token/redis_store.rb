@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
   module Token
     class RedisStore < Store
 
@@ -30,7 +30,7 @@ module WeixinAuthorize
       end
 
       def weixin_redis
-        WeixinAuthorize.weixin_redis
+        WeixinmpApi.weixin_redis
       end
     end
   end

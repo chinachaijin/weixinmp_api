@@ -1,4 +1,4 @@
-module WeixinAuthorize
+module WeixinmpApi
 
   class << self
 

@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
 
   class ResultHandler
 
@@ -34,7 +34,7 @@ module WeixinAuthorize
     private
 
       # if define Rails constant
-      # result = WeixinAuthorize::ResultHandler.new("0", "success", {:ok => "true"})
+      # result = WeixinmpApi::ResultHandler.new("0", "success", {:ok => "true"})
       # result.result["ok"] #=> true
       # result.result[:ok] #=> true
       # result.result['ok'] #=> true

@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
   module Api
     module Groups
 

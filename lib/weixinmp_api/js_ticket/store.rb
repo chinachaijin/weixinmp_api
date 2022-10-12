@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
   module JsTicket
     class Store
 
@@ -10,7 +10,7 @@ module WeixinAuthorize
       end
 
       def self.init_with(client)
-        if WeixinAuthorize.weixin_redis.nil?
+        if WeixinmpApi.weixin_redis.nil?
           ObjectStore.new(client)
         else
           RedisStore.new(client)
@@ -32,7 +32,7 @@ module WeixinAuthorize
       def set_jsticket
         result = client.http_get("/ticket/getticket", {type: 1}).result
         client.jsticket = result["ticket"]
-        client.jsticket_expired_at = WeixinAuthorize.calculate_expire(result["expires_in"])
+        client.jsticket_expired_at = WeixinmpApi.calculate_expire(result["expires_in"])
       end
 
     end

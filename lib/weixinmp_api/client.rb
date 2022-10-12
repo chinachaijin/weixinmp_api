@@ -2,7 +2,7 @@
 require "monitor"
 require "redis"
 require 'digest/md5'
-module WeixinAuthorize
+module WeixinmpApi
 
   class Client
 

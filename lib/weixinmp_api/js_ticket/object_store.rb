@@ -1,4 +1,4 @@
-module WeixinAuthorize
+module WeixinmpApi
   module JsTicket
     class ObjectStore < Store
 

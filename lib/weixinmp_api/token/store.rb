@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
   module Token
     class Store
 
@@ -10,7 +10,7 @@ module WeixinAuthorize
       end
 
       def self.init_with(client)
-        if WeixinAuthorize.weixin_redis.nil?
+        if WeixinmpApi.weixin_redis.nil?
           ObjectStore.new(client)
         else
           RedisStore.new(client)
@@ -47,11 +47,11 @@ module WeixinAuthorize
       def set_access_token(access_token_infos=nil)
         token_infos = access_token_infos || http_get_access_token.result
         client.access_token = token_infos["access_token"]
-        client.expired_at = WeixinAuthorize.calculate_expire(token_infos["expires_in"])
+        client.expired_at = WeixinmpApi.calculate_expire(token_infos["expires_in"])
       end
 
       def http_get_access_token
-        WeixinAuthorize.http_get_without_token("/token", authenticate_headers)
+        WeixinmpApi.http_get_without_token("/token", authenticate_headers)
       end
 
       def authenticate_headers

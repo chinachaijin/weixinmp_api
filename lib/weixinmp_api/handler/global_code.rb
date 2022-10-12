@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
 
   GLOBAL_CODES = {
     -1    => "系统繁忙",

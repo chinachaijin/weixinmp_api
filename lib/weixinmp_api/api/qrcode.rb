@@ -1,5 +1,5 @@
 # encoding: utf-8
-module WeixinAuthorize
+module WeixinmpApi
   module Api
     module Qrcode
     # http://mp.weixin.qq.com/wiki/index.php?title=生成带参数的二维码
@@ -41,7 +41,7 @@ module WeixinAuthorize
 
       # 通过ticket换取二维码, 直接访问即可显示！
       def qr_code_url(ticket)
-        WeixinAuthorize.mp_endpoint("/showqrcode?ticket=#{ticket}")
+        WeixinmpApi.mp_endpoint("/showqrcode?ticket=#{ticket}")
       end
 
       private

@@ -7,25 +7,25 @@ else
 end
 require "erb"
 
-require "weixin_authorize/carrierwave/weixin_uploader"
-require "weixin_authorize/config"
-require "weixin_authorize/handler"
-require "weixin_authorize/api"
-require "weixin_authorize/client"
+require "weixinmp_api/carrierwave/weixin_uploader"
+require "weixinmp_api/config"
+require "weixinmp_api/handler"
+require "weixinmp_api/api"
+require "weixinmp_api/client"
 
-module WeixinAuthorize
+module WeixinmpApi
 
   # token store
   module Token
-    autoload(:Store,       "weixin_authorize/token/store")
-    autoload(:ObjectStore, "weixin_authorize/token/object_store")
-    autoload(:RedisStore,  "weixin_authorize/token/redis_store")
+    autoload(:Store,       "weixinmp_api/token/store")
+    autoload(:ObjectStore, "weixinmp_api/token/object_store")
+    autoload(:RedisStore,  "weixinmp_api/token/redis_store")
   end
 
   module JsTicket
-    autoload(:Store,       "weixin_authorize/js_ticket/store")
-    autoload(:ObjectStore, "weixin_authorize/js_ticket/object_store")
-    autoload(:RedisStore,  "weixin_authorize/js_ticket/redis_store")
+    autoload(:Store,       "weixinmp_api/js_ticket/store")
+    autoload(:ObjectStore, "weixinmp_api/js_ticket/object_store")
+    autoload(:RedisStore,  "weixinmp_api/js_ticket/redis_store")
   end
 
   OK_MSG  = "ok".freeze
