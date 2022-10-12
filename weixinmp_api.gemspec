@@ -5,7 +5,7 @@ require 'weixinmp_api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "weixinmp_api"
-  spec.version       = WeixinAuthorize::VERSION
+  spec.version       = WeixinmpApi::VERSION
   spec.authors       = ["lanrion"]
   spec.email         = ["502807810@qq.com"]
   spec.description   = %q{weixin api authorize access_token}
