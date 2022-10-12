@@ -65,8 +65,3 @@ then run `rspec .`
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## 捐赠支持
-
-  如果你觉得我的gem对你有帮助，欢迎打赏支持，:smile:
-
-  ![](https://raw.githubusercontent.com/lanrion/my_config/master/imagex/donation_me_wx.jpg)
