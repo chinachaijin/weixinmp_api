@@ -1,4 +1,4 @@
-describe WeixinAuthorize::Client do
+describe WeixinmpApi::Client do
   describe "#get jsticket" do
     it "return the same jsticket in the same thing twice" do
       js_ticket_1 = $client.get_jsticket

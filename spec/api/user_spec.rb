@@ -1,7 +1,7 @@
-describe WeixinAuthorize::Api::User do
+describe WeixinmpApi::Api::User do
   it "can get a weixin User info" do
     user_info = $client.user(ENV["OPENID"])
-    expect(user_info.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(user_info.code).to eq(WeixinmpApi::OK_CODE)
     expect(user_info.result["openid"]).to eq(ENV["OPENID"])
   end
 
@@ -9,18 +9,18 @@ describe WeixinAuthorize::Api::User do
     valid_info = $client.is_valid?
     expect(valid_info).to eq(true)
     followers = $client.followers
-    expect(followers.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(followers.code).to eq(WeixinmpApi::OK_CODE)
     expect(followers.result.keys).to eq(["total", "count", "data", "next_openid"])
 
     valid_info = $client.is_valid?
     expect(valid_info).to eq(true)
     followers = $client.followers
-    expect(followers.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(followers.code).to eq(WeixinmpApi::OK_CODE)
     expect(followers.result.keys).to eq(["total", "count", "data", "next_openid"])
   end
 
   it "can update user remark" do
     user_info = $client.update_remark(ENV["OPENID"], "dylan")
-    expect(user_info.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(user_info.code).to eq(WeixinmpApi::OK_CODE)
   end
 end

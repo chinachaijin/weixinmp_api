@@ -1,4 +1,4 @@
-describe WeixinAuthorize::Api::Template do
+describe WeixinmpApi::Api::Template do
   # {{first.DATA}}
   # 项目名称：{{class.DATA}}
   # 时间：{{time.DATA}}
@@ -35,6 +35,6 @@ describe WeixinAuthorize::Api::Template do
       "#173177",
       data
     )
-    expect(msg_result.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(msg_result.code).to eq(WeixinmpApi::OK_CODE)
   end
 end

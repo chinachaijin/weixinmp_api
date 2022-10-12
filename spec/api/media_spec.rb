@@ -1,4 +1,4 @@
-describe WeixinAuthorize::Api::Media do
+describe WeixinmpApi::Api::Media do
 
   let(:image_jpg_path) do
     "#{File.dirname(__FILE__)}/medias/ruby-logo.jpg"
@@ -26,49 +26,49 @@ describe WeixinAuthorize::Api::Media do
 
   it "can upload a jpg image and get url" do
     response = $client.upload_image(image_jpg_file)
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["url"])
   end
 
   it "can upload a png image and get url" do
     response = $client.upload_image(remote_png_path)
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["url"])
   end
 
   it "can upload a jpg File image" do
     response = $client.upload_media(image_jpg_file, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 
   it "can upload a ico File image" do
     response = $client.upload_media(image_ico_file, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 
   it "can upload a local image" do
     response = $client.upload_media(image_jpg_path, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 
   it "can upload a local ico image" do
     response = $client.upload_media(image_ico_path, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 
   it "can upload a remote png image" do
     response = $client.upload_media(remote_png_path, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 
   it "can upload a remote jpg image" do
     response = $client.upload_media(remote_jpg_path, "image")
-    expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(response.code).to eq(WeixinmpApi::OK_CODE)
     expect(response.result.keys).to eq(["type", "media_id", "created_at"])
   end
 

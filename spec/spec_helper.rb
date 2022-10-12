@@ -53,13 +53,13 @@ exist_keys.each{|key|redis.del(key)}
 
 redis_with_ns = Redis::Namespace.new("#{namespace}", :redis => redis)
 
-WeixinAuthorize.configure do |config|
+WeixinmpApi.configure do |config|
   config.redis = redis_with_ns
   # config.key_expired = 200
   config.rest_client_options = {timeout: 10, open_timeout: 10, verify_ssl: true}
 end
 
-$client = WeixinAuthorize::Client.new(ENV["APPID"], ENV["APPSECRET"])
+$client = WeixinmpApi::Client.new(ENV["APPID"], ENV["APPSECRET"])
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience

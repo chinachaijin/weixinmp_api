@@ -1,4 +1,4 @@
-describe WeixinAuthorize::Api::Groups do
+describe WeixinmpApi::Api::Groups do
 
   let(:group_name) do
     "test group_name"
@@ -21,14 +21,14 @@ describe WeixinAuthorize::Api::Groups do
     group_ids.each do |group_id|
       res = $client.delete_group(group_id)
       if res.code.to_s != "45009"
-        expect(res.code).to eq(WeixinAuthorize::OK_CODE)
+        expect(res.code).to eq(WeixinmpApi::OK_CODE)
       end
     end
   end
 
   it "create a group" do
     response = $client.create_group(group_name)
-    if response.code == WeixinAuthorize::OK_CODE
+    if response.code == WeixinmpApi::OK_CODE
       expect(response.result["group"]["name"]).to eq(group_name)
     else
       expect(response.code).to eq(-1)
@@ -47,13 +47,13 @@ describe WeixinAuthorize::Api::Groups do
 
   it "#update_group_name" do
     response = $client.create_group(group_name)
-    if response.code != WeixinAuthorize::OK_CODE
+    if response.code != WeixinmpApi::OK_CODE
       expect(response.code).to eq(-1)
       puts "WEIXIN says: system error"
     else
       expect(response.result["group"]["name"]).to eq(group_name)
       response = $client.update_group_name(response.result["group"]["id"], group_name_2)
-      expect(response.code).to eq(WeixinAuthorize::OK_CODE)
+      expect(response.code).to eq(WeixinmpApi::OK_CODE)
       groups = $client.groups
       expect(groups.result["groups"][-1]["name"]).to eq(group_name_2)
     end
@@ -68,7 +68,7 @@ describe WeixinAuthorize::Api::Groups do
 
   it "#batch update group for openids" do
     res = $client.batch_update_group_for_openids([ENV["OPENID"]], last_group_id)
-    expect(res.code).to eq(WeixinAuthorize::OK_CODE)
+    expect(res.code).to eq(WeixinmpApi::OK_CODE)
   end
 
 end
