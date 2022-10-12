@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "weixinmp_api"
   spec.version       = WeixinAuthorize::VERSION
   spec.authors       = ["lanrion"]
-  spec.email         = ["huaitao-deng@foxmail.com"]
+  spec.email         = ["502807810@qq.com"]
   spec.description   = %q{weixin api authorize access_token}
   spec.summary       = %q{weixin api authorize access_token}
   spec.homepage      = "https://github.com/chinachaijin/weixinmp_api"
