@@ -1,4 +1,4 @@
-module WeixinAuthorize
+module WeixinmpApi
   module JsTicket
     class RedisStore < Store
       JSTICKET = "jsticket"
@@ -34,7 +34,7 @@ module WeixinAuthorize
       end
 
       def weixin_redis
-        WeixinAuthorize.weixin_redis
+        WeixinmpApi.weixin_redis
       end
     end
   end
